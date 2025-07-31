@@ -8,7 +8,7 @@ class Coustomrow extends StatelessWidget {
     required this.ForgetPassword,
     required this.onPressed,
     required this.onChanged,
-    required this.Ischeck,
+    required this.Ischeck,  
     required this.Chek,
   });
   Function() onPressed;

@@ -32,7 +32,7 @@ class costomSlaider extends GetView<onBordingControlerImp> {
               textAlign: TextAlign.center,
               style: themeArabic.textTheme.bodyLarge,
             ),
-            const SizedBox(height: 25),
+            const SizedBox(height: 25), 
             Text(
               dataStatic().onBordinglist[index].body,
               style: themeArabic.textTheme.headlineLarge,
