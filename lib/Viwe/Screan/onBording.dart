@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:khadamat/Constante/AppColors.dart';
 import 'package:khadamat/Controler/onBordingControler.dart';
 import 'package:khadamat/Viwe/Widget/onBording/costomBottum.dart';
 import 'package:khadamat/Viwe/Widget/onBording/costomControler.dart';
@@ -11,18 +12,21 @@ class onBording extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GetBuilder<onBordingControler>(
-        init: Controler,
-        builder: (T) {
-          return Column(
-            children: [
-              const SizedBox(height: 35),
-              const Expanded(flex: 5, child: costomSlaider()),
-              const SizedBox(height: 15),
-              const costomControler(),
-              Expanded(
-                flex: 2,
+    double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
+    print("w$w");
+    print("h$h");
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.ScafoldColor,
+        body: Column(
+          children: [
+            Expanded(flex: 5, child: costomSlider()),
+          
+            Expanded(
+              flex: 1,
+              child: Container(
+                padding: EdgeInsets.only(bottom: h * 0.02),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,9 +42,9 @@ class onBording extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          );
-        },
+            ),
+          ],
+        ),
       ),
     );
   }

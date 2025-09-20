@@ -4,9 +4,17 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 
 class Homecontroler extends GetxController {
   late RxInt selectedIndex;
-  late Rx<ScrollController> scrollController ;
-
+  late Rx<ScrollController> scrollController;
   late RxList locations;
+  List<String> categories = [
+    "30".tr,
+    "Hotels",
+    "Homes & Stays",
+    "Chalets",
+    "Huts & Tents",
+  ];
+  RxString SelectitmeCategory = "30".tr.obs;
+
   @override
   void onInit() {
     selectedIndex = 0.obs;
@@ -22,7 +30,7 @@ class Homecontroler extends GetxController {
           {'code': '08', 'name': 'Béchar'},
           {'code': '09', 'name': 'Blida'},
         ].obs;
-       scrollController = ScrollController().obs;
+    scrollController = ScrollController().obs;
     super.onInit();
   }
 

@@ -12,12 +12,10 @@ import 'package:khadamat/Viwe/Widget/Home/CustumbuttonSelctedWilaya.dart';
 class Home extends StatelessWidget {
   Home({super.key});
   Homecontroler Controler = Get.put(Homecontroler());
-  @override 
+  @override
   Widget build(BuildContext context) {
     Orientation orientation = MediaQuery.of(context).orientation;
     // تحقق من الاتجاه
-    bool isLandscape = orientation == Orientation.portrait;
-    print(orientation);
     return Scaffold(
       backgroundColor: AppColors.ScafoldColor,
       body: ListView(
@@ -41,13 +39,16 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Expanded(
-                child: CustumbuttonSelctedWilaya(),
+                child: CustumbuttonSelctedWilaya(Cnt: Controler),
               ), // add prameter selected
-              Expanded(flex: 2, child: ListWheelScrool()),
+              Expanded(flex: 2, child: ListWheelScrool(Controler: Controler)),
             ],
           ),
           // Row the Categry Servis
-          Container(alignment: Alignment.topCenter, child: Coustumcategory()),
+          Container(
+            alignment: Alignment.topCenter,
+            child: Coustumcategory(Controler: Controler),
+          ),
           CoustumShowAllServis(),
           // Show Servis
         ],

@@ -8,11 +8,9 @@ import 'package:khadamat/Constante/ThimeApp.dart';
 import 'package:khadamat/Controler/HomeControler.dart';
 
 class ListWheelScrool extends StatelessWidget {
-  ListWheelScrool({
-    super.key, // required this.selectedIndex,
-  });
+  ListWheelScrool({super.key, required this.Controler});
 
-  Homecontroler Controler = Get.put(Homecontroler());
+  Homecontroler Controler;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class ListWheelScrool extends StatelessWidget {
       // elevation: 10,
       // shadowColor: AppColors.Black,
       margin: const EdgeInsets.only(left: 15),
-      color: Colors.yellowAccent,
+      color: Colors.amber,
       child: SizedBox(
         height: 90,
         child: ListWheelScrollView.useDelegate(

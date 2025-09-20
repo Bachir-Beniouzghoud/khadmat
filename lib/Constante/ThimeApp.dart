@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:khadamat/Constante/AppColors.dart';
 import 'package:khadamat/Constante/static.dart';
 
@@ -55,5 +56,6 @@ ThemeData themeArabic = ThemeData(
   elevatedButtonTheme: EButtonTheme,
   textTheme: TextThem,
   buttonTheme: ButtonThem,
+  scaffoldBackgroundColor: AppColors.ScafoldColor,
   shadowColor: AppColors.Shadowcolor,
 );

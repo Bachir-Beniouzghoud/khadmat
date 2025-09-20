@@ -12,12 +12,12 @@ class Swich extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: Obx(
-        () => Card(
-          elevation: 20,
-          color: AppColors.ScafoldColor,
-          child: SalomonBottomBar(
+    return SafeArea(
+      // maintainBottomViewPadding: true,
+      child: Scaffold(
+        
+        bottomNavigationBar: Obx(
+          () => SalomonBottomBar(
             // curve: Curves.fastOutSlowIn,
             items: [
               // Hom Page
@@ -65,11 +65,11 @@ class Swich extends StatelessWidget {
             },
           ),
         ),
-      ),
 
-      body: Obx(() {
-        return dataStatic.Scren[Index.value];
-      }),
+        body: Obx(() {
+          return dataStatic.Scren[Index.value];
+        }),
+      ),
     );
   }
 }

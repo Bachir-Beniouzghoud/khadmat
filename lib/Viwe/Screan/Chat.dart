@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:khadamat/Constante/AppColors.dart';
 import 'package:khadamat/Constante/ThimeApp.dart';
-import 'package:khadamat/Viwe/Widget/Massegs/Chat.dart';
+import 'package:khadamat/Controler/ChatControler.dart';
+import 'package:khadamat/Viwe/Widget/Chat/Chat.dart';
 
-class ScrinMassegs extends StatelessWidget {
-  const ScrinMassegs({super.key});
+class ScrinChat extends StatelessWidget {
+  ScrinChat({super.key});
+  Chatcontroler Controler = Get.put(Chatcontroler());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

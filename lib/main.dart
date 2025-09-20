@@ -6,7 +6,8 @@ import 'package:khadamat/Local/Local.dart';
 import 'package:khadamat/Swich.dart';
 import 'package:khadamat/Viwe/Screan/Forget_Password.dart';
 import 'package:khadamat/Viwe/Screan/Login.dart';
-import 'package:khadamat/Viwe/Screan/Masseges.dart';
+import 'package:khadamat/Viwe/Screan/Chat.dart';
+import 'package:khadamat/Viwe/Screan/Massege.dart';
 import 'package:khadamat/Viwe/Screan/Sigin_up.dart';
 import 'package:khadamat/Viwe/Screan/onBording.dart';
 
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/Login", page: () => Login()),
         GetPage(name: "/ForgetPassword", page: () => ForgetPassword()),
         GetPage(name: "/SignUp", page: () => SignUp()),
-        GetPage(name: "/ScrinMassegs", page: () => ScrinMassegs()),
+        GetPage(name: "/ScrinChat", page: () => ScrinChat()),
+        GetPage(name: "/Massege", page: () => Massege()),
       ],
       // darkTheme: ThemeData.dark(),
       // highContrastTheme: ThemeData.light(),

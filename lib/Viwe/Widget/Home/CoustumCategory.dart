@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/get_utils.dart';
-import 'package:khadamat/Constante/AppColors.dart';
+import 'package:get/get.dart';
 import 'package:khadamat/Constante/ThimeApp.dart';
+import 'package:khadamat/Controler/HomeControler.dart';
 
 class Coustumcategory extends StatelessWidget {
-  const Coustumcategory({super.key});
-
+  Coustumcategory({required this.Controler, super.key});
+  // Homecontroler Controler = Get.put(Homecontroler());
+  Homecontroler Controler;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -41,46 +42,58 @@ class Coustumcategory extends StatelessWidget {
             ),
           ],
         ),
-        // Categorey
-        SizedBox(
-          // height: 50,
-          height: MediaQuery.of(context).size.width / 8,
+        // *********************************************************************************
+        // ******************************************The Categorey *************************
+        // ******************************************fonction Categorey *************************
+        category(),
+      ],
+    );
+  }
 
-          child: ListView.builder(
-            itemCount: 15,
-            scrollDirection: Axis.horizontal,
-            // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            //   maxCrossAxisExtent: 100,
-            //   childAspectRatio: 3 / 9,
-            //   // mainAxisExtent: 10,
-            //   crossAxisSpacing: 2,
-            //   mainAxisSpacing: 1,
-            // ),
-            itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.all(5),
-                child: ElevatedButton(
-                  style: themeArabic.elevatedButtonTheme.style?.copyWith(
-                    backgroundColor: WidgetStatePropertyAll<Color>(
-                      Color.fromARGB(255, 255, 203, 0),
-                    ),
-                    // : Colors.yellowAccent,
+  //Category
+  Widget category() {
+    return SizedBox(
+      height: 40,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        itemCount: Controler.categories.length,
+        itemBuilder: (context, index) {
+          return Obx(() {
+            final bool isSelect =
+                Controler.SelectitmeCategory == Controler.categories[index];
 
-                    // Colors.yellowAccent
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "بينات $index",
-                    style: themeArabic.textTheme.headlineLarge?.copyWith(
-                      color: AppColors.Black,
-                    ),
+            return GestureDetector(
+              onTap: () {
+                // Handle category tap
+                Controler.SelectitmeCategory.value =
+                    Controler.categories[index];
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 8,
+                ),
+                margin: const EdgeInsets.symmetric(horizontal: 5),
+                decoration: BoxDecoration(
+                  color: isSelect ? Colors.amberAccent : Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: !isSelect ? Colors.white : Colors.amber,
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-      ],
+                child: Text(
+                  Controler.categories[index],
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            );
+          });
+        },
+      ),
     );
   }
 }
