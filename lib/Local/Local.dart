@@ -33,6 +33,7 @@ class MyLocal implements Translations {
       "25": "الفئات",
       "26": "عرض الكل>",
       "27": "الشائعة",
+      "28": "الرسائل ",
     },
     "en": {
       "1": "Contribute to your self-development",
@@ -62,7 +63,8 @@ class MyLocal implements Translations {
       "24": "Hi 👋",
       "25": "Category",
       "26": "View all >",
-      "27":"The rumor",
+      "27": "The rumor",
+      "28": "Massegs",
     },
   };
 }
